@@ -1,0 +1,71 @@
+# Testing Authorization
+GET http://localhost:3001/api/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiY2hyaXN0aWFuIiwiZnVsbG5hbWUiOiJDaHJpc3RpYW4iLCJyb2xlIjoxLCJpYXQiOjE2Njk3MDg1ODIsImV4cCI6MTY2OTcwODYwMn0.5_bY0e1UFn1zb94HK8U33KVV9a-id_tTQtUqvASupwg
+###
+
+
+# Authentication
+POST http://localhost:3001/api/auth/register/
+Content-Type: application/json
+
+{
+    "username":"matthew",
+    "password":"matthew",
+    "confirm_password":"matthew",
+    "fullname":"Matthew",
+    "role":1
+}
+
+###
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+    "username":"christian",
+    "password":"christian" 
+}
+
+###
+POST http://localhost:3001/api/auth/refresh
+
+###
+POST http://localhost:3001/api/auth/logout
+
+
+
+# Pendaftar
+###
+GET http://localhost:3001/api/pendaftar
+###
+
+GET http://localhost:3001/api/pendaftar/2
+###
+POST http://localhost:3001/api/pendaftar
+Content-Type: application/json
+
+{
+    "nama":"nama",    
+    "id_event":1,    
+    "nama_event":"nama event",    
+    "link_dokumen":"link dokumen",    
+    "no_hp":"no hp",
+    "email":"email@gmail.com",
+    "alasan":"alasan"
+}
+
+###
+PUT http://localhost:3001/api/pendaftar/2
+Content-Type: application/json
+
+{
+    "nama":"nama pendaftar baru",    
+    "id_event":1,    
+    "nama_event":"nama event baru",    
+    "link_dokumen":"link dokumen baru",    
+    "no_hp":"no hp baru",
+    "email":"email baru",
+    "alasan":"alasan baru"
+}
+
+###
+DELETE http://localhost:3001/api/pendaftar/2
